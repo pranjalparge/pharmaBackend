@@ -21,7 +21,7 @@ jspm_packages/
 .npm
 
 # dotenv environment variables file
-.env
+# /.env
 
 # Debugging artifacts
 coverage/
