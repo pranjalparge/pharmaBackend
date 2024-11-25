@@ -1,9 +1,8 @@
-const User = require("../models/user_model");
+// const User = require("../models/user_model");
 const Graph = require("../models/new_vacancy_model");
 
-
-exports.addVacancy= async (req, res) => {
-  const { job_title, company_name, experience, valid_upto } = req.body;
+exports.addVacancy = async (req, res) => {
+  const { job_title, company_name, experience, valid_upto,img,decription } = req.body;
 
   try {
     // Create a new graph entry
@@ -12,6 +11,8 @@ exports.addVacancy= async (req, res) => {
       company_name,
       experience,
       valid_upto,
+      img,
+      decription
     });
 
     // Save the graph to the database
@@ -30,28 +31,21 @@ exports.addVacancy= async (req, res) => {
 };
 
 exports.deleteJob = async (req, res) => {
-  const { jobId } = req.params;
-  const uid = req.uid;
-
   try {
-    const user = await User.findById(uid);
-    if (!user) {
-      return res
-        .status(404)
-        .json({ status: false, message: "User not found." });
-    }
+    const { jobId } = req.params;
+    const uid = req.uid;
+    console.log(req.params, "req");
 
     const vacancy = await Graph.findById(jobId);
+    console.log(vacancy, "vacancy");
+
+    // return;
     if (!vacancy) {
       return res
         .status(404)
-        .json({ status: false, message: "Graph not found." });
+        .json({ status: false, message: "Vacancies not found." });
     }
-
-    user.graphList = user.graphList.filter((id) => id.toString() !== jobId);
-    await user.save();
-
-    await Graph.deleteOne({ _id: jobId });
+    await Graph.findByIdAndDelete({ _id: jobId });
 
     return res.status(200).json({
       status: true,
@@ -84,7 +78,6 @@ exports.deleteJob = async (req, res) => {
 //     return res.status(500).json({ status: false, message: error.message });
 //   }
 // };
- 
 
 exports.GetAllJob = async (req, res) => {
   try {
