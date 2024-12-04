@@ -14,7 +14,7 @@ const jobSchema = new mongoose.Schema({
           content2:{ type: String,},
           heading3:{ type: String,},
           content3:{ type: String,},
-          link:{type:string},
+          link:{ type:string, } 
 
 });
 
