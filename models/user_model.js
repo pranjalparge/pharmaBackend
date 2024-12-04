@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 
-
 const userSchema = new mongoose.Schema({
   uid: { type: String, unique: true },
   name: { type: String, required: true },
@@ -11,7 +10,7 @@ const userSchema = new mongoose.Schema({
   siteName: { type: String },
   siteLocation: { type: String },
   siteAddress: { type: String },
-  graphList : [{ type: mongoose.Schema.Types.ObjectId, ref: 'Graph' }]
+  graphList: [{ type: mongoose.Schema.Types.ObjectId, ref: "Graph" }],
 });
 
 // Hash password before saving user
