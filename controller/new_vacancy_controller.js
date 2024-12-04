@@ -6,7 +6,7 @@ exports.addVacancy = async (req, res) => {
     heading1,
     content2,
     heading2, content3,
-    heading3} = req.body;
+    heading3,link} = req.body;
 
   try {
     // Create a new graph entry
@@ -21,7 +21,8 @@ exports.addVacancy = async (req, res) => {
       heading1,
       content2,
       heading2, content3,
-      heading3
+      heading3,
+      link,
 
 
     });
