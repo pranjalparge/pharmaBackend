@@ -2,7 +2,7 @@
 const candidate = require("../models/candidate_model");
 
 exports.addForm = async (req, res) => {
-  const { name, company_name, phone, } =
+  const { name, email, company_name, phone, } =
     req.body;
 
   try {
@@ -13,7 +13,11 @@ exports.addForm = async (req, res) => {
       phone,
       company_name,
     });
+
+    console.log("email -- "+ email);
+
     await vacancy.save();
+
 
     // Respond with success
     return res.status(200).json({
