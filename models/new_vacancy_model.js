@@ -6,7 +6,14 @@ const jobSchema = new mongoose.Schema({
     experience: { type: String, required: true, },
     valid_upto : { type: String,},
        img : { type: String, },
-          decription : { type: String, }
+          decription : { type: String, },
+
+          heading1:{ type: String,},
+          content1:{ type: String,},
+          heading2:{ type: String,},
+          content2:{ type: String,},
+          heading3:{ type: String,},
+          content3:{ type: String,},
 
 });
 

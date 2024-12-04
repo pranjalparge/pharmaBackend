@@ -2,7 +2,11 @@
 const Graph = require("../models/new_vacancy_model");
 
 exports.addVacancy = async (req, res) => {
-  const { job_title, company_name, experience, valid_upto,img,decription } = req.body;
+  const { job_title, company_name, experience, valid_upto,img,decription ,  content1,
+    heading1,
+    content2,
+    heading2, content3,
+    heading3} = req.body;
 
   try {
     // Create a new graph entry
@@ -12,7 +16,14 @@ exports.addVacancy = async (req, res) => {
       experience,
       valid_upto,
       img,
-      decription
+      decription,
+      content1,
+      heading1,
+      content2,
+      heading2, content3,
+      heading3
+
+
     });
 
     // Save the graph to the database
