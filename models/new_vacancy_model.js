@@ -11,7 +11,7 @@ const jobSchema = new mongoose.Schema({
           heading1:{ type: String,},
           content1:{ type: String,},
           heading2:{ type: String,},
-          content2: [{ number: { type: String }, head: { type: Number }, subheading: { type: String } }],
+          content2: [{ number: { type: Number }, head: { type: String }, subheading: { type: String } }],
           heading3:{ type: String,},
           content3:{ type: String,},
           link:{ type:String, } 
