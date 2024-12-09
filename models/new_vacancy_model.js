@@ -9,9 +9,9 @@ const jobSchema = new mongoose.Schema({
           decription : { type: String, },
 
           heading1:{ type: String,},
-          content1:{ type: String,},
+          content2:{ type: String,},
           heading2:{ type: String,},
-          content2: [{ number: { type: Number }, head: { type: String }, subheading: { type: String } }],
+          content1: [{ number: { type: Number }, head: { type: String }, subheading: { type: String } }],
           heading3:{ type: String,},
           content3:{ type: String,},
           link:{ type:String, } 
